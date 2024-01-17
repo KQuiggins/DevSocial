@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+
+const initialPosts = [
+	{
+		id: 2,
+		text: 'Lorem ipsum',
+		user: {
+			avatar: '/mafia/mafia.jpg',
+			username: 'Test User',
+		},
+	},
+	{
+		id: 1,
+		text: 'Lorem ipsum',
+		user: {
+			avatar: '/woman/woman.jpg',
+			username: 'Test User 2',
+		},
+	},
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [post, setPosts] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			<div className='container '>
+				<div className='feed'>
+					{initialPosts.map((post, i) => (
+						<Card style={{ width: '18rem' }}>
+							<Card.Img variant='top' src={post.user.avatar} />
+							<Card.Body>
+								<Card.Title>{post.user.username}</Card.Title>
+								<Card.Text>{post.text}</Card.Text>
+							</Card.Body>
+						</Card>
+					))}
+				</div>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
