@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -10,18 +10,18 @@ import './App.css';
 const initialPosts = [
 	{
 		id: 2,
-		text: 'Lorem ipsum',
+		text: 'Contract Killer',
 		user: {
 			avatar: '/mafia/mafia.jpg',
-			username: 'Test User',
+			username: 'Mafia Man',
 		},
 	},
 	{
 		id: 1,
-		text: 'Lorem ipsum',
+		text: 'Just along for the ride',
 		user: {
 			avatar: '/woman/woman.jpg',
-			username: 'Test User 2',
+			username: 'Mafia Woman',
 		},
 	},
 ];
@@ -31,10 +31,11 @@ function App() {
 
 	return (
 		<>
-			<div className='container '>
-				<div className='feed'>
+			<Container fluid>
+				<Row className='flex flex-row justify-content-center sm={12} md={6} lg={6}'>
+					<Col>
 					{initialPosts.map((post, i) => (
-						<Card style={{ width: '18rem' }}>
+						<Card className='w-25 m-5 text-center'>
 							<Card.Img variant='top' src={post.user.avatar} />
 							<Card.Body>
 								<Card.Title>{post.user.username}</Card.Title>
@@ -42,8 +43,9 @@ function App() {
 							</Card.Body>
 						</Card>
 					))}
-				</div>
-			</div>
+					</Col>
+				</Row>
+			</Container>
 		</>
 	);
 }
