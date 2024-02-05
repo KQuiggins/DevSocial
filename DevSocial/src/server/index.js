@@ -2,12 +2,21 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import compress from 'compression';
-import services from './services/index.js';
+import servicesLoader from './services/index.js';
+import db from './database/index.js';
+
+const utils = {
+	db,
+}
+
+const services = servicesLoader(utils);
+
 
 const app = express();
 app.use(cors());
 app.use(compress());
 
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === 'production') {
 	app.use(helmet());
 	app.use(
