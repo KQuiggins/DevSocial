@@ -1,6 +1,8 @@
-// Assuming the file name is config.js or config.mjs based on your project setup
-import dotenv from 'dotenv';
-dotenv.config();
+// Require the dotenv package
+require('dotenv').config();
+
+// Now you can access environment variables via process.env
+console.log(process.env.YOUR_ENV_VARIABLE);
 
 const development = {
   username: "root",
@@ -36,4 +38,5 @@ const dev_config = {
   production
 };
 
-export default dev_config;
+// Use module.exports to export the config object
+module.exports = dev_config;
