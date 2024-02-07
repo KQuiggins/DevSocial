@@ -22,12 +22,14 @@ let posts = [
 
 export default function resolver() {
     const { db } = this;
+    console.log(this);
     const { Post } = db.models;
+    console.log(Post);
 
     const resolvers = {
         RootQuery: {
             posts(root, args, context) {
-                Post.findAll({order: [['createdAt', 'DESC']]});
+                return Post.findAll({order: [['createdAt', 'DESC']]});
             }
         },
         RootMutation: {
