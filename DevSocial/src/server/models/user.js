@@ -5,6 +5,7 @@ export default (sequelize, DataTypes) => {
     
     static associate(models) {
       this.hasMany(models.Post);
+      this.belongsToMany(models.Chat, { through: 'users_chats' });
     }
   }
   User.init({
