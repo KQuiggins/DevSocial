@@ -17,18 +17,3 @@ export default (utils) => {
 }
 
 
-
-
-
-
-// const executableSchema = makeExecutableSchema({
-//     typeDefs: Schema,
-//     resolvers: Resolvers
-//   });
-
-// const server = new ApolloServer({ 
-//     schema: executableSchema,
-//     context: ({ req }) => req
-// });
-
-// export default server;
