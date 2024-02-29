@@ -20,6 +20,7 @@ const typeDefinitions = `
     messages: [Message]
     users: [User]
   }
+  
   type RootQuery {
     posts: [Post]
     chats: [Chat]
@@ -32,12 +33,26 @@ const typeDefinitions = `
     avatar: String!
     username: String!
   }
+  input ChatInput {
+    users: [Int]
+  }
+  input MessageInput {
+    text: String!
+    chatId: Int!
+  }
   type RootMutation {
     addPost (
         post: PostInput!
         
     ): Post
+    addChat (
+      chat: ChatInput!
+    ): Chat
+    addMessage (
+      message: MessageInput!
+    ): Message
   }
+  
   schema {
     query: RootQuery
     mutation: RootMutation
