@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "@graphql-tools/schema": "^10.0.2",
     "apollo-server-express": "^3.13.0",
     "bootstrap": "^5.3.2",

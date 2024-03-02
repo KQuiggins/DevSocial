@@ -24,6 +24,8 @@ const initialPosts = [
 	},
 ];
 
+
+
 function App() {
 	const [post, setPosts] = useState(0);
 
