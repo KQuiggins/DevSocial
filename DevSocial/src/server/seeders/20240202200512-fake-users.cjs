@@ -6,13 +6,13 @@ module.exports = {
 			'Users',
 			[
 				{
-					avatar: '/mafia/mafia.jpg',
+					avatar: '/uploads/mafia.jpg',
 					username: 'TestUser',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
-					avatar: '/woman/woman.jpg',
+					avatar: '/uploads/woman.jpg',
 					username: 'TestUser2',
 					createdAt: new Date(),
 					updatedAt: new Date(),

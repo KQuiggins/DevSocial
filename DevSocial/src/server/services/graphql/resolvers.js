@@ -23,7 +23,10 @@ export default function resolver() {
 		},
 		Chat: {
 			messages(chat, args, context) {
-				return chat.getMessages({ order: [['id', 'ASC']] });
+				return chat.getMessages({ 
+						
+					order: [['id', 'ASC']] 
+				});
 			},
 			users(chat, args, context) {
 				return chat.getUsers();

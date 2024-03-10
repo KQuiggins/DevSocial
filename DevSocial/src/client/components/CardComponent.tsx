@@ -4,12 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-const Card = () => {
+const CardComponent = ({posts}) => {
 	return (
 		<Container fluid>
 			<Row className='flex flex-row justify-content-center sm={12} md={6} lg={6}'>
 				<Col>
-					{initialPosts.map((post) => (
+					{posts.map((post) => (
 						<Card key={post.id} className='w-25 m-5 text-center'>
 							<Card.Img variant='top' src={post.user.avatar} />
 							<Card.Body>
@@ -24,4 +24,4 @@ const Card = () => {
 	);
 };
 
-export default Card;
+export default CardComponent;

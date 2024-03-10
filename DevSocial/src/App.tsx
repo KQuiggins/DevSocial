@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 import './App.css';
-import Post from './Post';
+import Post from './client/components/Post';
 
 // const initialPosts = [
 // 	{
