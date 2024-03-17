@@ -5,6 +5,7 @@ const typeDefinitions = `
     user: User
   }
   type User {
+    id: Int
     avatar: String
     username: String
   

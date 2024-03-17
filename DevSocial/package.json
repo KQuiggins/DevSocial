@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node src/server/index.js",
     "backend": "nodemon --watch src/server src/server/index.js",
     "fullstack": "concurrently \"npm run backend\" \"npm run dev\"",
     "dev": "vite",
