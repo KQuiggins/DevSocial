@@ -1,7 +1,4 @@
 
-
-
-
 import { ApolloClient, InMemoryCache, from, HttpLink } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 const client = new ApolloClient({
@@ -12,9 +9,9 @@ const client = new ApolloClient({
 					console.log(
 						'[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}',
 					),
-				); // Added comma here
+				); 
 				if (networkError) {
-					console.log('[Network error]: ${networkError}'); // Added comma here
+					console.log('[Network error]: ${networkError}'); 
 				}
 			}
 		}),
